@@ -8,10 +8,10 @@ instaladas por las municipalidades.
 
 | Integrante | Módulo | Carpeta |
 |---|---|---|
-| DANIEL G | Inicio, Registro e Inicio de sesión | icio-registro-login/` |
-| EMILY | Panel Ciudadano (saldo, código, historial, máquinas) | panel-ciudadano/` |
-| SEBASTIAN DOMIAN | Depósito (simulador de máquina) y retiro de saldo | deposito-retiro/` |
-| CLAUDIO JIMENEZ | Panel Administrador municipal |-panel-admin/` |
+| DANIEL G | Inicio, Registro e Inicio de sesión | DANIELGV-inicio-registro-login/ |
+| EMILY | Panel Ciudadano (saldo, código, historial, máquinas) | EMILY-panel-ciudadano/ |
+| SEBASTIAN DOMIAN | Depósito (simulador de máquina) y retiro de saldo | SEBASTIAN-deposito-retiro/ |
+| CLAUDIO JIMENEZ | Panel Administrador municipal | CLAUDIO-panel-admin/ |
 
  ## Cómo está organizado
  Cada uno de nosotros lo que va a hacer es trabajar dentro de una carpeta propia, con nuestros
