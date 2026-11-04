@@ -32,14 +32,15 @@ $maquinas = array(
         <p>¿Reciclaje quen nos devuelve dinero?, incentivo de cada municipalidad!!</p>
     </header>
 
-    <nav>
+        <nav>
         <ul>
             <li><a href="index.php">Inicio</a></li>
             <li><a href="#como-funciona">¿Cómo funciona?</a></li>
             <li><a href="#maquinas">Máquinas de recicaje</a></li>
+
             <?php if ($usuarioActivo): ?>
                 <li>Hola, <?= htmlspecialchars($usuarioActivo["Nombre"]) ?> (₡<?= $usuarioActivo["Saldo"] ?>)</li>
-                <li><a class="btn btn-primario" href="../EMILY-depositos-recompensas/panel.php">Mi panel</a></li>
+                <li><a href="../EMILY-depositos-recompensas/panel.php">Mi panel</a></li>
                 <li>
                     <form method="post" action="procesar.php" style="display:inline;">
                         <input type="hidden" name="accion" value="cerrar_sesion">
@@ -47,6 +48,7 @@ $maquinas = array(
                     </form>
                 </li>
             <?php else: ?>
+                
                 <li><a href="registro.php">Registrarse</a></li>
                 <li><a href="login.php">Iniciar sesión</a></li>
             <?php endif; ?>
