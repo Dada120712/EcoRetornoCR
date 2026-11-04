@@ -1,0 +1,124 @@
+
+/* ESTILOS ECORETORNO CR */
+
+:root {
+    --verde: #1b5e20;
+    --verde-claro: #2e7d32;
+    --amarillo: #ffd600;
+    --gris: #f3f4f8;
+    --rojo: #c62828;
+}
+
+/* Código del ciudadano */
+.codigo-usuario {
+    background: #e8f5e9;
+    border: 2px solid var(--verde);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.codigo-usuario strong {
+    color: var(--verde);
+    font-size: 24px;
+}
+
+/* Saldos */
+.saldo {
+    color: var(--verde);
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.saldo-disponible {
+    color: var(--verde-claro);
+    font-size: 26px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Formularios */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background: white;
+}
+
+select:focus {
+    outline: 2px solid var(--verde-claro);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Tablas */
+.tabla-scroll {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: var(--verde);
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover td {
+    background: #f3faf3;
+}
+
+/* Botones */
+.fila-botones {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* Adaptación a pantallas pequeñas */
+@media (max-width: 600px) {
+    .codigo-usuario strong {
+        font-size: 18px;
+    }
+
+    .saldo {
+        font-size: 26px;
+    }
+
+    .saldo-disponible {
+        font-size: 22px;
+    }
+
+    .fila-botones {
+        flex-direction: column;
+    }
+
+    .fila-botones .btn {
+        text-align: center;
+    }
+}
