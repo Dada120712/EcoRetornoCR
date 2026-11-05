@@ -1,0 +1,5 @@
+1|Cartago|Parque Central de Cartago|Activa
+2|Paraíso|Parque de Paraíso|Activa
+3|San José|Parque La Sabana, Sabana Sur|Activa
+4|Heredia|Mercado Municipal de Heredia|Próximamente
+5|Liberia|Parque Central|Inactiva
