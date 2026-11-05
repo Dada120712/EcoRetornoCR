@@ -44,7 +44,7 @@ $maquinas = array(
                 <li><a href="../EMILY-depositos-recompensas/panel.php">Mi panel</a></li>
                 <li><a href="../SEBASTIAN-deposito-retiro/simulador.php">Simulador de máquina</a></li>
                 <?php if ($usuarioActivo["Correo"] === $correoAdmin): ?>
-                    <li><a href="../CLAUDIO-panel-admin/panel_admin.php">Panel administrador</a></li>
+                <li><a class="btn btn-primario" href="../CLAUDIO-panel-admin/panel_admin.php">Panel administrador</a></li>
                 <?php endif; ?>
                 <li>
                     <form method="post" action="procesar.php" style="display:inline;">
