@@ -46,4 +46,5 @@ Cada uno de nosotros va a ir haciendo sus commits correspondientes.
 - Las pantallas del administrador (carpeta `CLAUDIO-panel-admin`) todavía no tienen botón para cerrar sesión ni para volver al sitio. Por ahora, para salir hay que entrar al inicio (`index.php`) y cerrar sesión desde ahí.
 - Las máquinas que administra el panel de administración se guardan en su propio archivo y todavía no se reflejan en la página de inicio ni en el panel del ciudadano, que usan una lista fija.
 - El administrador se identifica con un correo fijo en el código, mientras no exista un campo de rol en la base de datos.
+- -Para el próximo avance además del código unico, tenemos que implementar el código QR.
 
