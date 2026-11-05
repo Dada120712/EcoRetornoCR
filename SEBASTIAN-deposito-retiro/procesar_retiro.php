@@ -2,7 +2,7 @@
 
 session_start();
 
-require_once "funciones_persona3.php";
+require_once "funciones.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: retiro.php");
@@ -17,7 +17,7 @@ if (!isset($_SESSION["usuario"])) {
 $accion = $_POST["accion"] ?? "";
 
 
-// aca se ejecuta try7catch
+// aca se ejecuta try/catch
 
 try {
     switch ($accion) {

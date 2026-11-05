@@ -3,7 +3,7 @@
 // solicitud de retiro 
 
 session_start();
-require_once "funciones_persona3.php";
+require_once "funciones.php";
 
 //aqui el que quiere retirar tiene que haber iniciado sesion
 if (!isset($_SESSION["usuario"])) {

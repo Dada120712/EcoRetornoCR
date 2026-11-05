@@ -3,7 +3,7 @@
 // historial 
 
 session_start();
-require_once "funciones_persona3.php";
+require_once "funciones.php";
 
 if (!isset($_SESSION["usuario"])) {
     header("Location: ../DANIELGV-inicio-registro-login/login.php");

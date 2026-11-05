@@ -3,7 +3,7 @@
 // simulador
 
 session_start();
-require_once "funciones_persona3.php";
+require_once "funciones.php";
 
 $mensaje = $_SESSION["mensaje"] ?? null;
 unset($_SESSION["mensaje"]);
