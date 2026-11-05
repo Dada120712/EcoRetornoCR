@@ -8,6 +8,7 @@ unset($_SESSION["mensaje"]);
 
 //aqui si ya el usuario existe que entre de una vez.
 $usuarioActivo = $_SESSION["usuario"] ?? null;
+$correoAdmin = "carlos.prueba@example.com";
 
 //aqui pusimos algunas maquinas para dejar los envaces, pero de ejemplo y que sea visual
 $maquinas = array(
@@ -32,7 +33,7 @@ $maquinas = array(
         <p>¿Reciclaje quen nos devuelve dinero?, incentivo de cada municipalidad!!</p>
     </header>
 
-        <nav>
+           <nav>
         <ul>
             <li><a href="index.php">Inicio</a></li>
             <li><a href="#como-funciona">¿Cómo funciona?</a></li>
@@ -41,7 +42,10 @@ $maquinas = array(
             <?php if ($usuarioActivo): ?>
                 <li>Hola, <?= htmlspecialchars($usuarioActivo["Nombre"]) ?> (₡<?= $usuarioActivo["Saldo"] ?>)</li>
                 <li><a href="../EMILY-depositos-recompensas/panel.php">Mi panel</a></li>
-                  <li><a href="../SEBASTIAN-deposito-retiro/simulador.php">Simulador de máquina</a></li>
+                <li><a href="../SEBASTIAN-deposito-retiro/simulador.php">Simulador de máquina</a></li>
+                <?php if ($usuarioActivo["Correo"] === $correoAdmin): ?>
+                    <li><a href="../CLAUDIO-panel-admin/panel_admin.php">Panel administrador</a></li>
+                <?php endif; ?>
                 <li>
                     <form method="post" action="procesar.php" style="display:inline;">
                         <input type="hidden" name="accion" value="cerrar_sesion">
@@ -49,7 +53,6 @@ $maquinas = array(
                     </form>
                 </li>
             <?php else: ?>
-                
                 <li><a href="registro.php">Registrarse</a></li>
                 <li><a href="login.php">Iniciar sesión</a></li>
             <?php endif; ?>
