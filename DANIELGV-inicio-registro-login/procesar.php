@@ -70,6 +70,13 @@ try {
             );
 
             mensaje("exito", "Bienvenido de nuevo, " . $encontrado["Nombre"] . ".");
+
+            // si es la cuenta administradora, lo mandamos directo al panel de Claudio
+            if ($encontrado["Correo"] === "carlos.prueba@example.com") {
+                header("Location: ../CLAUDIO-panel-admin/panel_admin.php");
+                exit;
+            }
+
             header("Location: index.php");
             exit;
 
