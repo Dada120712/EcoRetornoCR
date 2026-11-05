@@ -1,0 +1,3 @@
+Botella plastica PET|25
+Lata de aluminio|30
+Botella de vidrio|20
