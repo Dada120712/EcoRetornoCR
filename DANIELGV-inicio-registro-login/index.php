@@ -41,6 +41,7 @@ $maquinas = array(
             <?php if ($usuarioActivo): ?>
                 <li>Hola, <?= htmlspecialchars($usuarioActivo["Nombre"]) ?> (₡<?= $usuarioActivo["Saldo"] ?>)</li>
                 <li><a href="../EMILY-depositos-recompensas/panel.php">Mi panel</a></li>
+                  <li><a href="../SEBASTIAN-deposito-retiro/simulador.php">Simulador de máquina</a></li>
                 <li>
                     <form method="post" action="procesar.php" style="display:inline;">
                         <input type="hidden" name="accion" value="cerrar_sesion">
