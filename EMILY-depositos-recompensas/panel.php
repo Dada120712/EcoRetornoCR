@@ -52,8 +52,8 @@ unset($_SESSION["mensaje"]);
         <ul>
             <li><a href="../DANIELGV-inicio-registro-login/index.php">Inicio</a></li>
             <li><a href="panel.php">Mi panel</a></li>
-            <li><a href="deposito.php">Registrar depósito</a></li>
-            <li><a href="retiro.php">Solicitar retiro</a></li>
+            <li><a href="../SEBASTIAN-deposito-retiro/simulador.php">Simulador de máquina</a></li>
+            <li><a href="../SEBASTIAN-deposito-retiro/retiro.php">Solicitar retiro</a></li>
             <li>
                 <form method="post" action="../DANIELGV-inicio-registro-login/procesar.php">
                     <input type="hidden" name="accion" value="cerrar_sesion">
@@ -96,115 +96,9 @@ unset($_SESSION["mensaje"]);
         <p>Cada vez que deposite materiales reciclables, recibirá una recompensa que se agregará a su saldo.</p>
 
         <div class="fila-botones">
-            <a class="btn btn-primario" href="deposito.php">Registrar depósito</a>
-            <a class="btn btn-secundario" href="retiro.php">Solicitar retiro</a>
+            <a class="btn btn-primario" href="../SEBASTIAN-deposito-retiro/simulador.php">Ir al simulador de máquina</a>
+            <a class="btn btn-secundario" href="../SEBASTIAN-deposito-retiro/retiro.php">Solicitar retiro</a>
         </div>
     </section>
 
     <!-- Historial de depósitos -->
-    <section class="tarjeta">
-        <h2>Mi historial de depósitos</h2>
-
-        <?php if (count($historial) === 0): ?>
-            <p class="vacio">Todavía no ha registrado depósitos de reciclaje.</p>
-        <?php else: ?>
-            <div class="tabla-scroll">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Máquina</th>
-                            <th>Material</th>
-                            <th>Cantidad</th>
-                            <th>Recompensa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($historial as $deposito): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($deposito["Fecha"]) ?></td>
-                                <td><?= htmlspecialchars($deposito["Maquina"]) ?></td>
-                                <td><?= htmlspecialchars($deposito["Material"]) ?></td>
-                                <td><?= $deposito["Cantidad"] ?></td>
-                                <td>₡<?= number_format($deposito["Recompensa"], 0, ",", ".") ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        <?php endif; ?>
-    </section>
-
-    <!-- Máquinas disponibles -->
-    <section class="tarjeta">
-        <h2>Máquinas de reciclaje disponibles</h2>
-        <p>Consulte las máquinas de reciclaje y sus ubicaciones para realizar sus depósitos.</p>
-
-        <div class="tabla-scroll">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Cantón</th>
-                        <th>Ubicación</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($maquinas as $maquina): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($maquina["Canton"]) ?></td>
-                            <td><?= htmlspecialchars($maquina["Ubicacion"]) ?></td>
-                            <td>
-                                <?php if ($maquina["Estado"] === "Activa"): ?>
-                                    <span class="etiqueta etiqueta-ok">Activa</span>
-                                <?php else: ?>
-                                    <span class="etiqueta etiqueta-no">Próximamente</span>
-                                <?php endif; ?>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Solicitudes de retiro -->
-    <section class="tarjeta">
-        <h2>Mis solicitudes de retiro</h2>
-
-        <?php if (count($retiros) === 0): ?>
-            <p class="vacio">Todavía no ha realizado solicitudes de retiro.</p>
-        <?php else: ?>
-            <div class="tabla-scroll">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Fecha</th>
-                            <th>Método</th>
-                            <th>Monto</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($retiros as $retiro): ?>
-                            <tr>
-                                <td><?= htmlspecialchars($retiro["Fecha"]) ?></td>
-                                <td><?= htmlspecialchars($retiro["Metodo"]) ?></td>
-                                <td>₡<?= number_format($retiro["Monto"], 0, ",", ".") ?></td>
-                                <td><?= htmlspecialchars($retiro["Estado"]) ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            </div>
-        <?php endif; ?>
-    </section>
-
-    <footer>EcoRetorno CR - Proyecto académico de reciclaje</footer>
-</div>
-
-<!-- Generación del código QR -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="js/ecoqr.js"></script>
-</body>
-</html>
